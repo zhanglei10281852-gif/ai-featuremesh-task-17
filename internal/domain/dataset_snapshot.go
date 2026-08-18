@@ -84,14 +84,6 @@ func (b *DatasetSnapshot) Transition(to SnapshotState, now time.Time) error {
 	return nil
 }
 
-func (b DatasetSnapshot) CopyInto(target *DatasetSnapshot) *DatasetSnapshot {
-	if target == nil {
-		target = &DatasetSnapshot{}
-	}
-	*target = b
-	return target
-}
-
 func (b DatasetSnapshot) Clone() DatasetSnapshot { return b }
 
 func (b DatasetSnapshot) IsUsableAt(at time.Time) bool {
